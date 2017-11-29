@@ -1,15 +1,15 @@
-function countLetters(text) {
+function charPositioning(text) {
   var text = text.split(" ").join("").toLowerCase();
   var lettersFound = {};
 
   for(var i = 0; i < text.length; i++) {
     if(lettersFound[text[i]]) {
-      lettersFound[text[i]] += 1;
+      lettersFound[text[i]].push(i);
     } else {
-      lettersFound[text[i]] = 1;
+      lettersFound[text[i]] = [i];
     }
   }
   return lettersFound;
 }
 
-console.log(countLetters("Lighthouse"));
+console.log(charPositioning("Lighthouse"));
